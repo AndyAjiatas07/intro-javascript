@@ -1,17 +1,12 @@
-function sumaHastaN(n) {
-    let suma = 0;
-    for (let i = 1; i <= n; i++) {
-        suma += i;
-    }
-    return suma;
+/**
+ * Andy Ariel Ajiatas Xiquin - 2021496 - IN5CM
+ * Ejercicios de Bucles (for/while)
+ * 12. Crea un programa que calcule la suma de todos los números del 1 al 50.
+ */
+let suma = 0;
+
+for (let i = 1; i <= 50; i++) {
+  suma += i;
 }
 
-// Pedir al usuario que ingrese un número hasta dónde sumar
-const numeroUsuario = parseInt(prompt("Ingresa un número hasta dónde quieres sumar (por ejemplo, 50):"));
-
-if (!isNaN(numeroUsuario) && numeroUsuario > 0) {
-    const resultado = sumaHastaN(numeroUsuario);
-    console.log(`La suma de todos los números del 1 al ${numeroUsuario} es: ${resultado}`);
-} else {
-    console.log("Por favor ingresa un número válido mayor que 0.");
-}
+console.log("La suma de los números del 1 al 50 es: " + suma);
