@@ -5,19 +5,30 @@
  * y pida al usuario que lo adivine, dándole pistas de si su intento es
  * mayor o menor.
  */
-const numeroSecreto = Math.floor(Math.random() * 100) + 1;
-let numeroJugador = null;
+function adivinarNumero() {
+  const numeroSecreto = Math.floor(Math.random() * 100) + 1;
+  let intentos = 10;
 
-while (numeroJugador !== numeroSecreto) {
-  numeroJugador = parseInt(prompt("Adivina el número secreto (entre 1 y 100):"));
+  while (intentos > 0) {
+    const numeroJugador = parseInt(
+      prompt("Adivina el número secreto del 1 al 100, tienes 10 intentos:")
+    );
 
-  if (numeroJugador === numeroSecreto) {
-    console.log("¡Felicidades! Adivinaste el número secreto.");
-  } else if (numeroJugador > numeroSecreto) {
-    console.log("El número secreto es menor, intenta de nuevo.");
-  } else if (numeroJugador < numeroSecreto) {
-    console.log("El número secreto es mayor, intenta de nuevo.");
-  } else {
-    console.log("Entrada inválida, escribe un número.");
+    if (numeroJugador === numeroSecreto) {
+      console.log("¡Felicidades! Adivinaste el número secreto.");
+      break;
+    } else if (numeroJugador > numeroSecreto) {
+      console.log("El número secreto es menor.");
+    } else if (numeroJugador < numeroSecreto) {
+      console.log("El número secreto es mayor.");
+    } else {
+      console.log("Número inválido");
+    }
+
+    intentos--;
+  }
+
+  if (intentos === 0) {
+    console.log("Se acabaron los intentos. El número era: " + numeroSecreto);
   }
 }

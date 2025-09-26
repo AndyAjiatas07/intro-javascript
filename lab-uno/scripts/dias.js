@@ -4,28 +4,35 @@
  * 6. Escribe una función que reciba un número del 1 al 7 y retorne el día de
 la semana correspondiente (ej. 1 = "Lunes").
  */
-function obtenerDiaSemana(numero) {
-    switch (numero) {
-        case 1:
-            return "Lunes";
-        case 2:
-            return "Martes";
-        case 3:
-            return "Miércoles";
-        case 4:
-            return "Jueves";
-        case 5:
-            return "Viernes";
-        case 6:
-            return "Sábado";
-        case 7:
-            return "Domingo";
-        default:
-            return "Número inválido";
-    }
+function diaSemana() {
+  const numero = parseInt(
+    prompt("Ingresa un número del 1 al 7 para saber el día de la semana:")
+  );
+
+  switch (numero) {
+    case 1:
+      console.log("Lunes");
+      break;
+    case 2:
+      console.log("Martes");
+      break;
+    case 3:
+      console.log("Miércoles");
+      break;
+    case 4:
+      console.log("Jueves");
+      break;
+    case 5:
+      console.log("Viernes");
+      break;
+    case 6:
+      console.log("Sábado");
+      break;
+    case 7:
+      console.log("Domingo");
+      break;
+    default:
+      console.log("Número inválido");
+      break;
+  }
 }
-
-const numeroUsuario = parseInt(prompt("Ingresa un número del 1 al 7 para saber el día de la semana:"));
-
-const dia = obtenerDiaSemana(numeroUsuario);
-console.log(dia);
